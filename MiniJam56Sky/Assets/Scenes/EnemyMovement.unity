@@ -2028,9 +2028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0119d63d95682c348a81731dd8b5f291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tank: {fileID: 593757783624823163, guid: a65de5bd80189bc4d87acaf987d25e94, type: 3}
+  tank: {fileID: 4111765213037114520, guid: 1f33d64f7b4c0af94a3ce0c7da932123, type: 3}
   person: {fileID: 1681617644555370265, guid: 7e252ecc6e60d317aaf72603c6bc7d72, type: 3}
-  helicopter: {fileID: 593757783624823163, guid: 8dae70939a8f9d74e931f0b988c8e52e,
+  helicopter: {fileID: 5729080073653891899, guid: f0ac420c2c4434c62a1c6fed69fde2d8,
     type: 3}
 --- !u!1 &2011266692
 GameObject:
