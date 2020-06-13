@@ -13,7 +13,9 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             // die
-            GameObject.Destroy(this.gameObject, 0.001f);
+            Destroy(this.gameObject, 0.001f);
+
+            RoundManager.Instance.KillEnemy();
         }
     }
 }
