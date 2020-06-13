@@ -33,9 +33,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // sets the target to move to and activates movement
-    /*
-     * todo: add sprite flip depending on direction we are moving in
-     */
     public void SetTarget(Transform target)
     {
         this.target = target;

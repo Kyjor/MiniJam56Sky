@@ -6,23 +6,20 @@ public class Bullet : MonoBehaviour
 {
     public float damage;
 
+    private bool canDamage = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(this.gameObject, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && canDamage)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(this.damage);
+            canDamage = false;
         }
     }
 }
