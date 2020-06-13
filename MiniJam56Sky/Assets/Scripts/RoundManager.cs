@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using TMPro;
 
 public class RoundManager : MonoBehaviour
 {
-    private int enemyCount;
-    private int currentRound;
+    public TextMeshProUGUI roundCounter;
 
-    private int p = 3;
-    private int h = 1;
-    private int t = 2;
+    private int enemyCount;
+    private int currentRound = 1;
+
+    private string path;
+    private string jsonString;
+
+    private bool roundActive = false;
+
+    private Rounds rounds;
 
     private static RoundManager m_Instance = null;
     public static RoundManager Instance
@@ -26,11 +33,12 @@ public class RoundManager : MonoBehaviour
             return m_Instance;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
-        
+        path = Application.streamingAssetsPath + "/rounds.json";
+        jsonString = File.ReadAllText(path);
+        rounds = JsonUtility.FromJson<Rounds>(jsonString);
     }
 
     // Update is called once per frame
@@ -38,18 +46,18 @@ public class RoundManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            p *= 2;
-            h *= 2;
-            t *= 2;
-            SpawnManager.Instance.SetRound(p, h, t);
-            SpawnManager.Instance.SetSpawn(true);
-            this.SetEnemies(p+h+t);
-        }
-    }
+            this.roundActive = true;
+            this.roundCounter.text = this.currentRound.ToString();
 
-    public void SetEnemies(int enemyCount)
-    {
-        this.enemyCount = enemyCount;
+            int people = this.rounds.rounds[currentRound-1].enemies[0];
+            int helicopters = this.rounds.rounds[currentRound-1].enemies[1];
+            int tanks = this.rounds.rounds[currentRound-1].enemies[2];
+
+            SpawnManager.Instance.SetRound(people, helicopters, tanks);
+            SpawnManager.Instance.SetSpawn(true);
+
+            this.SetEnemies(people + helicopters + tanks);
+        }
     }
 
     public void KillEnemy()
@@ -63,10 +71,16 @@ public class RoundManager : MonoBehaviour
 
     private void EndRound()
     {
+        this.roundActive = false;
         this.currentRound++;
 
         // UI, sound updates
 
         SpawnManager.Instance.SetSpawn(false);
+    }
+
+    private void SetEnemies(int enemyCount)
+    {
+        this.enemyCount = enemyCount;
     }
 }
