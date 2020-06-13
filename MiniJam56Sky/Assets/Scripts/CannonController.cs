@@ -11,6 +11,8 @@ public class CannonController : MonoBehaviour
     [SerializeField] private float firePower = 1000f;
     private float fireTimer = 0f;
     public GameObject donutPrefab;
+    public AudioClip clip;
+    public SFXPlayer sfxPlayer;
 
     // You must set the cursor in the inspector.
     public Texture2D crosshair;
@@ -65,6 +67,8 @@ public class CannonController : MonoBehaviour
             var donut = Instantiate(donutPrefab, transform.position, Quaternion.identity, null) as GameObject;
             //Fire Donut
             donut.GetComponent<Rigidbody2D>().AddForce(firePower * transform.right);
+            //Play sound
+            sfxPlayer.PlayAudio(clip);
             readyToFire = false;
             fire = false;
             fireTimer = 0f;
