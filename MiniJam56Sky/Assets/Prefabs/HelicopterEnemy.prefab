@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58253584c1802f646adc104042566e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   health: 150
 --- !u!114 &180404623270813587
 MonoBehaviour:
@@ -202,14 +203,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2954da6225e707fbbbb08021c0ef3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 1
+  attack: 0
   fireRate: 5
   fireTimer: 0
-  attackPower: 500
+  attackPower: 100
   attackDistance: 1
   bulletOrigin: {fileID: 9166332736676948349}
   bulletPrefab: {fileID: 1569784909195610852, guid: aeace6a8c776c4995b3b2f05a00722b2,
     type: 3}
+  target: {fileID: 0}
 --- !u!1 &7374801894642166998
 GameObject:
   m_ObjectHideFlags: 0
