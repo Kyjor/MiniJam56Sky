@@ -54,7 +54,9 @@ MonoBehaviour:
   - 0.2
   - 0.2
   - 0.2
-  - 0.075
+  - 0.2
+  - 0.2
+  - 0.03
   moveSpeed: 3
   right: 0
   cloudSprites:
@@ -63,6 +65,8 @@ MonoBehaviour:
   - {fileID: 5032311985023962910, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
   - {fileID: -6312691485739586918, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
   - {fileID: 1335533840468528395, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
+  - {fileID: -2511677816553217614, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
+  - {fileID: 4131233200051398029, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
   - {fileID: -1833397268784212349, guid: 8935c256ab7715453a07fff485483a2d, type: 3}
 --- !u!212 &5124204432183670531
 SpriteRenderer:

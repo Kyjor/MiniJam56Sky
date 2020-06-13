@@ -112,9 +112,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4085310237897974000}
   - component: {fileID: 2403253775525157186}
-  - component: {fileID: 7002590260034201330}
   - component: {fileID: 7049174016743519486}
   - component: {fileID: -5888192005225360839}
+  - component: {fileID: 2116555688628671763}
+  - component: {fileID: 3428443196281007754}
+  - component: {fileID: 8426574187720609192}
   m_Layer: 10
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -164,19 +166,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7002590260034201330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4111765213037114520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4711904630b0ee644bc199703c83f8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &7049174016743519486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,14 +192,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2954da6225e707fbbbb08021c0ef3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 1
+  attack: 0
   fireRate: 5
   fireTimer: 0
-  attackPower: 500
+  attackPower: 100
   attackDistance: 1
   bulletOrigin: {fileID: 8141975182090370808}
   bulletPrefab: {fileID: 1569784909195610852, guid: aeace6a8c776c4995b3b2f05a00722b2,
     type: 3}
+  target: {fileID: 0}
+--- !u!114 &2116555688628671763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111765213037114520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08bc13862d82534186fc4c0a6531a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFireTime: 0.5
+  initialFiringDistance: 4
+  maxForwardDuringFireState: 1
+  maxBackwardDistanceTravel: 5
+  speed: 500
+--- !u!61 &3428443196281007754
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111765213037114520}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &8426574187720609192
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111765213037114520}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8058631227554651553
 GameObject:
   m_ObjectHideFlags: 0

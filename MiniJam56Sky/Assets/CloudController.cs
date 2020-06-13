@@ -11,7 +11,6 @@ public class CloudController : MonoBehaviour
     public float[] cloudSpawnWeights;
     public float moveSpeed;
     public bool right = false;
-
     public Sprite[] cloudSprites;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +19,7 @@ public class CloudController : MonoBehaviour
         moveSpeed = Random.Range(cloudMinSpeed,cloudMaxSpeed);
         transform.localScale *= Random.Range(cloudMinSize,cloudMaxSize);
         InvokeRepeating("MoveCloud",0f, Time.deltaTime);
+        Invoke("DestroyThis",20f);
     }
 
     // Update is called once per frame
@@ -40,11 +40,14 @@ public class CloudController : MonoBehaviour
 
         }
     }
-
+    void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 
      public int GetRandomWeightedIndex(float[] weights)
             {
-                if (weights == null || weights.Length == 0) return -1;
+                if (weights == null || weights.Length == 0) return 0;
      
                 float w;
                 float t = 0;
@@ -75,6 +78,6 @@ public class CloudController : MonoBehaviour
                     if (s >= r) return i;
                 }
      
-                return -1;
+                return 0;
             }
 }

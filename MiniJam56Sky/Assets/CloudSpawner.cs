@@ -10,7 +10,7 @@ public class CloudSpawner : MonoBehaviour
     public Transform rightBottom;
 
     public GameObject cloudPrefab;
-    
+    public GameObject cloudHolder;
   
     [SerializeField] private float timeBetweenSpawns = .5f;
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class CloudSpawner : MonoBehaviour
                         newPosition = new Vector3(leftBottom.position.x,Random.Range(rightBottom.position.y,rightTop.position.y), 1f );
 
         }
-        var newCloud = Instantiate(cloudPrefab,transform.position,Quaternion.identity, null) as GameObject;
+        var newCloud = Instantiate(cloudPrefab,transform.position,Quaternion.identity, cloudHolder.transform) as GameObject;
         newCloud.GetComponent<CloudController>().right = right;
         newCloud.transform.position = newPosition;
     }
