@@ -40,6 +40,12 @@ public class EnemyMovement : MonoBehaviour
     {
         this.target = target;
         this.active = true;
+        if(this.target.position.x < transform.position.x)
+        {
+            Vector3 flipPlayerScale = transform.localScale;
+            flipPlayerScale.x *= -1;
+            transform.localScale = flipPlayerScale;
+        }
     }
 
     public void SetSpeed(float speed)
