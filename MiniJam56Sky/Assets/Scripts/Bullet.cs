@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(this.damage);
             canDamage = false;
+            Destroy(gameObject);
         }
     }
 }
