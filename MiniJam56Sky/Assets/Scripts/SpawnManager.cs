@@ -56,8 +56,6 @@ public class SpawnManager : MonoBehaviour
                     break;
             }
         }
-
-        // TODO: Read in data file to know spawn probabilities (needs done in round manager)
     }
 
     // Update is called once per frame
@@ -65,10 +63,6 @@ public class SpawnManager : MonoBehaviour
     {
         if (this.spawnEnemies && this.timeToSpawn <= Time.time)
         {
-            Debug.Log("spawning");
-            Debug.Log(this.timeToSpawn);
-            Debug.Log(Time.time);
-
             EnemyType spawnType = IListExtensions.Pop(this.spawnOrder);
             if (this.spawnOrder.Count == 0) this.spawnEnemies = false;
             
