@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5726204085469719923}
   - component: {fileID: 6377638725676534861}
   - component: {fileID: 745499507582908317}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crossfitter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 7202919221491011433}
   - component: {fileID: 7202919221491011439}
   - component: {fileID: 7202919221491011432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 7202919221566721275}
   - component: {fileID: 7202919221566721273}
   - component: {fileID: 7202919221566721274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanShirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 7202919222251955354}
   - component: {fileID: 7202919222251955352}
   - component: {fileID: 7202919222251955353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanArms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 7202919222602280202}
   - component: {fileID: 7202919222602280200}
   - component: {fileID: 7202919222602280201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7202919223217258510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyWalkHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 7202919223478996335}
   - component: {fileID: 7202919223478996328}
   - component: {fileID: 7202919223478996329}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HumanEyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
