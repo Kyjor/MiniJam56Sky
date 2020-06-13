@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3962591297486871452}
   - component: {fileID: 5726204085469719923}
   - component: {fileID: 6377638725676534861}
+  - component: {fileID: 745499507582908317}
   m_Layer: 0
   m_Name: Crossfitter
   m_TagString: Enemy
@@ -86,6 +87,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &745499507582908317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681617644555370265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ed689043c34f2f59d4dc163736c5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteParts:
+  - {fileID: 7202919222251955355}
+  - {fileID: 7202919221566721252}
+  - {fileID: 7202919221491011434}
 --- !u!1 &7202919221491011434
 GameObject:
   m_ObjectHideFlags: 0
