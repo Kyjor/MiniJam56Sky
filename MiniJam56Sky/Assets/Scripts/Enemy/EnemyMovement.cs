@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
             float step = speed * Time.deltaTime; // calculate distance to move
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
             
-            if (Vector3.Distance(transform.position, target.position) < 0.001f)
+            if (Vector3.Distance(transform.position, target.position) < 1f)
             {
                 // stop moving
                 this.active = false;
@@ -72,5 +72,13 @@ public class EnemyMovement : MonoBehaviour
     public void SetSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Base"))
+        {
+            SetTarget(other.transform);
+        }   
     }
 }

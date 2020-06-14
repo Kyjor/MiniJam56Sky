@@ -18,7 +18,7 @@ public class Base : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   if(healthDisplay != null)
         this.healthDisplay.text = this.health.ToString() + "/" + this.maxHealth.ToString();
     }
 
