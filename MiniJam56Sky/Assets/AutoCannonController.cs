@@ -11,7 +11,7 @@ public class AutoCannonController : MonoBehaviour
     [SerializeField] private float fireRate = 10f;
     [SerializeField] private float firePower = 1000f;
     private float groundTowerYPosition = -3.75f;
-    private float airTowerYPosition;
+    private float airTowerYPosition = 3.75f;
     private float fireTimer = 0f;
 
     public float moveSpeed = 0.1f;   

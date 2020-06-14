@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 1702389149576257873}
   - component: {fileID: 902387821816784310}
   - component: {fileID: 180404623270813587}
+  - component: {fileID: 7562762097676890616}
   m_Layer: 10
   m_Name: HelicopterEnemy
   m_TagString: Enemy
@@ -191,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   health: 150
+  sfxPlayer: {fileID: 0}
+  deathClip: {fileID: 0}
 --- !u!114 &180404623270813587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +215,27 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1569784909195610852, guid: aeace6a8c776c4995b3b2f05a00722b2,
     type: 3}
   target: {fileID: 0}
+--- !u!50 &7562762097676890616
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729080073653891899}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7374801894642166998
 GameObject:
   m_ObjectHideFlags: 0
