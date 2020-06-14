@@ -52,7 +52,22 @@ public class AutoCannonController : MonoBehaviour
                 readyToFire = true;
             }
         }
-       
+       else if ( readyToFire && !fire)
+       {
+           fire = true;
+       }
+       AimCannon();
+    }
+
+    void AimCannon()
+    {
+        if(target !=null)
+            {
+                Vector3 dir = target.position -  transform.position;
+                print(dir);
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
     }
 
     private void FixedUpdate()
@@ -69,9 +84,7 @@ public class AutoCannonController : MonoBehaviour
         {
             if(target !=null)
             {
-                Vector3 dir = target.position - Camera.main.WorldToScreenPoint(transform.position);
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            
             
               //Instantiate donut
                 var donut = Instantiate(donutPrefab, transform.position, Quaternion.identity, null) as GameObject;
