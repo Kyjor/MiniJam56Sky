@@ -127,7 +127,7 @@ public class TankMovement : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if(collision.CompareTag("Base"))
         {
             print("collide");
             enemyAttack.target = collision.gameObject.transform;
