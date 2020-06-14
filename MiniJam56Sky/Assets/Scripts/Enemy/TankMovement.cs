@@ -89,7 +89,6 @@ public class TankMovement : MonoBehaviour
 
         if (currentState == State.backward)
         {
-            print("backward");
             Vector2 dir = new Vector2(0, 0);
             if (movingRight)
             {
@@ -129,7 +128,6 @@ public class TankMovement : MonoBehaviour
     {
         if(collision.CompareTag("Base"))
         {
-            print("collide");
             enemyAttack.target = collision.gameObject.transform;
          
         }
