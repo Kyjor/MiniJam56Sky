@@ -836,8 +836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe85af4cddd27d4398c71bd2eb45f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AirTowerCost: 0
-  GroundTowerCost: 0
+  AirTowerCost: 100
+  GroundTowerCost: 100
   AirTower: {fileID: 7157429344855805400, guid: 350acb1c88e440670985e5107140b80f,
     type: 3}
   GroundTower: {fileID: 7469053537544298436, guid: 7b026cc644d6ae681bf6a6fd3ab90505,
@@ -4413,6 +4413,11 @@ PrefabInstance:
       propertyPath: healthDisplay
       value: 
       objectReference: {fileID: 1014485293}
+    - target: {fileID: 3737537672572593121, guid: df1ad822b6a2b0337845f6dfcbd70fea,
+        type: 3}
+      propertyPath: isFactory
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1ad822b6a2b0337845f6dfcbd70fea, type: 3}
 --- !u!1001 &6069807982189305628

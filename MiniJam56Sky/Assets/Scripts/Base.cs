@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class Base : MonoBehaviour
 {
-      public float maxHealth;
+    public float maxHealth;
     public float health;
     public Image healthBar;
 
     public TextMeshProUGUI healthDisplay;
+
+    public bool isFactory;
 
     private void Start()
     {
@@ -31,6 +33,10 @@ public class Base : MonoBehaviour
         if (health <= 0)
         {
             // game over
+            if (!isFactory)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

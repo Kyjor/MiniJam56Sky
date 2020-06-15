@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
 {
     public EnemyType type;
 
-
     public float maxHealth;
     public float health;
     public SFXPlayer sfxPlayer;
@@ -33,6 +32,8 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject, 0.001f);
 
             RoundManager.Instance.KillEnemy();
+
+            PointManager.Instance.AddPoints(100);
         }
     }
 }

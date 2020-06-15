@@ -10,6 +10,8 @@ public class RoundManager : MonoBehaviour
 
     private int enemyCount;
     private int currentRound = 1;
+    private int lastWrittenRound;
+    private float roundScalingMultiplier = 1.6f;
 
     private string path;
     private string jsonString;
@@ -40,6 +42,7 @@ public class RoundManager : MonoBehaviour
         path = Application.streamingAssetsPath + "/rounds.json";
         jsonString = File.ReadAllText(path);
         rounds = JsonUtility.FromJson<Rounds>(jsonString);
+        this.lastWrittenRound = this.rounds.rounds.Length-1;
     }
 
     // Update is called once per frame
@@ -51,9 +54,23 @@ public class RoundManager : MonoBehaviour
             this.inRound = true;
             this.roundCounter.text = "Round: " + this.currentRound.ToString();
 
-            int people = this.rounds.rounds[currentRound-1].enemies[0];
-            int helicopters = this.rounds.rounds[currentRound-1].enemies[1];
-            int tanks = this.rounds.rounds[currentRound-1].enemies[2];
+            int people;
+            int helicopters;
+            int tanks;
+
+            if (currentRound > lastWrittenRound)
+            {
+                float scaling = Mathf.Pow(roundScalingMultiplier, currentRound - lastWrittenRound);
+                people = (int)(this.rounds.rounds[lastWrittenRound].enemies[0] * scaling);
+                helicopters = (int)(this.rounds.rounds[lastWrittenRound].enemies[1] * scaling);
+                tanks = (int)(this.rounds.rounds[lastWrittenRound].enemies[2] * scaling);
+            }
+            else
+            {
+                people = this.rounds.rounds[currentRound-1].enemies[0];
+                helicopters = this.rounds.rounds[currentRound-1].enemies[1];
+                tanks = this.rounds.rounds[currentRound-1].enemies[2];
+            }
 
             SpawnManager.Instance.SetRound(people, helicopters, tanks);
             SpawnManager.Instance.SetSpawn(true);
