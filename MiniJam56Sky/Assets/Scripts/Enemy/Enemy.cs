@@ -33,7 +33,11 @@ public class Enemy : MonoBehaviour
 
             RoundManager.Instance.KillEnemy();
 
+<<<<<<< HEAD
             PointManager.Instance.AddPoints(Random.Range(10,15));
+=======
+            PointManager.Instance.AddPoints(8);
+>>>>>>> master
         }
     }
 }

@@ -559,11 +559,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+<<<<<<< HEAD
   health: 350
   healthBar: {fileID: 443925901}
   healthDisplay: {fileID: 0}
   isFactory: 0
   restartButton: {fileID: 0}
+=======
+  health: 50
+  healthBar: {fileID: 443925901}
+  healthDisplay: {fileID: 0}
+  isFactory: 0
+>>>>>>> master
 --- !u!1 &7469053538301263545
 GameObject:
   m_ObjectHideFlags: 0

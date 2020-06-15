@@ -521,7 +521,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
+<<<<<<< HEAD
   fireRate: 3
+=======
+  fireRate: 1
+>>>>>>> master
   fireTimer: 0
   attackPower: 100
   attackDistance: 1
@@ -544,7 +548,11 @@ MonoBehaviour:
   maxFireTime: 0.5
   initialFiringDistance: 4
   maxForwardDuringFireState: 1
+<<<<<<< HEAD
   maxBackwardDistanceTravel: 1
+=======
+  maxBackwardDistanceTravel: 5
+>>>>>>> master
   speed: 400
 --- !u!50 &8426574187720609192
 Rigidbody2D:

@@ -630,8 +630,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
+<<<<<<< HEAD
   health: 350
   healthBar: {fileID: 1766941374}
   healthDisplay: {fileID: 0}
   isFactory: 0
   restartButton: {fileID: 0}
+=======
+  health: 50
+  healthBar: {fileID: 1766941374}
+  healthDisplay: {fileID: 0}
+  isFactory: 0
+>>>>>>> master

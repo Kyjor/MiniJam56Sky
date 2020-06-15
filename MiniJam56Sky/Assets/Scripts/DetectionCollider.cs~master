@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class DetectionCollider : MonoBehaviour
 {
+    public EnemyAttack enemyAttack;
     [Header("Events")]
 	[Space]
     public UnityEvent OnPlayerDetectedEvent;
@@ -18,9 +19,13 @@ public class DetectionCollider : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.gameObject.CompareTag("Player"))
+        print(other.name);
+        if(other.gameObject.CompareTag("Base"))
         {
+            print("Helllloooo");
+
             OnPlayerDetectedEvent.Invoke();
+            enemyAttack.target = other.gameObject.transform;
         }
     }
 }

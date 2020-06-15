@@ -18,17 +18,26 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Enemy") && canDamage)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(this.damage);
+<<<<<<< HEAD
             canDamage = false;
             Destroy(gameObject);
 
+=======
+            canDamage = false;
+>>>>>>> master
         }
 
         if (collision.CompareTag("Base") && canDamage)
         {
             collision.gameObject.GetComponent<Base>().TakeDamage(this.damage);
+<<<<<<< HEAD
             canDamage = false;
             Destroy(gameObject);
 
+=======
+            canDamage = false;
+>>>>>>> master
         }
+        Destroy(gameObject);
     }
 }
