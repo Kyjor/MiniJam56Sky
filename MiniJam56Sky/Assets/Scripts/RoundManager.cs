@@ -49,7 +49,7 @@ public class RoundManager : MonoBehaviour
         {
             this.roundActive = false;
             this.inRound = true;
-            this.roundCounter.text = this.currentRound.ToString();
+            this.roundCounter.text = "Round: " + this.currentRound.ToString();
 
             int people = this.rounds.rounds[currentRound-1].enemies[0];
             int helicopters = this.rounds.rounds[currentRound-1].enemies[1];
