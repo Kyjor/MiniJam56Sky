@@ -15,6 +15,7 @@ public class RoundManager : MonoBehaviour
     private string jsonString;
 
     private bool roundActive = false;
+    private bool inRound = false;
 
     private Rounds rounds;
 
@@ -44,9 +45,10 @@ public class RoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (this.roundActive)
         {
-            this.roundActive = true;
+            this.roundActive = false;
+            this.inRound = true;
             this.roundCounter.text = this.currentRound.ToString();
 
             int people = this.rounds.rounds[currentRound-1].enemies[0];
@@ -69,14 +71,25 @@ public class RoundManager : MonoBehaviour
         }
     }
 
+    public void StartRound()
+    {
+        this.roundActive = true;
+    }
+
+    public bool InRound()
+    {
+        return this.inRound;
+    }
+
     private void EndRound()
     {
-        this.roundActive = false;
         this.currentRound++;
 
         // UI, sound updates
 
         SpawnManager.Instance.SetSpawn(false);
+        GameManager.Instance.EndRound();
+        this.inRound = false;
     }
 
     private void SetEnemies(int enemyCount)
