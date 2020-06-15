@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
             float step = speed * Time.deltaTime; // calculate distance to move
             transform.position = Vector3.MoveTowards(transform.position, target.position, step);
             
-            if (Vector3.Distance(transform.position, target.position) < 1f)
+            if (Vector3.Distance(transform.position, target.position) < 0.001f)
             {
                 // stop moving
                 this.active = false;

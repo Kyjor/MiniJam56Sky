@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ColorCustomizer : MonoBehaviour
 {
-    public GameObject[] spriteParts;
+    public GameObject[] spriteArms;
+    public GameObject [] spriteShirts;
+    public GameObject[] spriteHairs;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,13 +15,28 @@ public class ColorCustomizer : MonoBehaviour
 
 
     void ColorSprites()
-    {
-        for (int i = 0; i < spriteParts.Length; i++)
+    {   Color newColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f), Random.Range(0f, 1f));
+        for (int i = 0; i < spriteArms.Length; i++)
         {
              // Color part
-            Color newColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f), Random.Range(0f, 1f));
-            spriteParts[i].GetComponent<SpriteRenderer>().color = newColor;
+            
+            spriteArms[i].GetComponent<SpriteRenderer>().color = newColor;
         }
+        newColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f), Random.Range(0f, 1f));
+         for (int i = 0; i < spriteShirts.Length; i++)
+        {
+             // Color part
+            
+            spriteShirts[i].GetComponent<SpriteRenderer>().color = newColor;
+        }
+        newColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f), Random.Range(0f, 1f));
+         for (int i = 0; i < spriteHairs.Length; i++)
+        {
+             // Color part
+            
+            spriteHairs[i].GetComponent<SpriteRenderer>().color = newColor;
+        }
+
     }
     // Update is called once per frame
     void Update()
