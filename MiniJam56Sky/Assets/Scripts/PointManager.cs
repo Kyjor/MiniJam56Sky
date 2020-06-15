@@ -38,4 +38,9 @@ public class PointManager : MonoBehaviour
         this.points -= points;
         return true;
     }
+
+    public void AddPoints(int points)
+    {
+        this.points += points;
+    }
 }
