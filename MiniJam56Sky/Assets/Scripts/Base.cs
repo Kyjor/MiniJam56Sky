@@ -13,6 +13,7 @@ public class Base : MonoBehaviour
     public TextMeshProUGUI healthDisplay;
 
     public bool isFactory;
+    public GameObject restartButton;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class Base : MonoBehaviour
         healthBar.fillAmount = fill;
         if (health <= 0)
         {
+            restartButton.SetActive(true);
             // game over
             if (!isFactory)
             {

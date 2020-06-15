@@ -9,4 +9,9 @@ public class Kickoff : MonoBehaviour
     {
         SceneManager.LoadScene("EnemyMovement");
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
