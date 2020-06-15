@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
             RoundManager.Instance.KillEnemy();
 
-            PointManager.Instance.AddPoints(100);
+            PointManager.Instance.AddPoints(8);
         }
     }
 }

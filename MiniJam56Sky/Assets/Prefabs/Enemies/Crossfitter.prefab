@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  fireRate: 5
+  fireRate: 1
   fireTimer: 0
   attackPower: 500
   attackDistance: 1
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   walkingAnim: {fileID: 7202919223217258511}
   attackingAnim: {fileID: 657574398}
   maxFireTime: 0.5
-  speed: 400
+  speed: 300
 --- !u!1 &7202919221491011434
 GameObject:
   m_ObjectHideFlags: 0

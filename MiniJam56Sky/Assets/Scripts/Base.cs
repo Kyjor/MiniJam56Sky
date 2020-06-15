@@ -26,6 +26,7 @@ public class Base : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        
         Debug.Log("took damge" + damage);
         this.health -= damage;
         float fill = this.health/this.maxHealth;
@@ -37,6 +38,19 @@ public class Base : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+    public void BuyHealth()
+    {
+        if (PointManager.Instance.SpendPoints(100) && health <= maxHealth)
+        {
+            this.health += 100;
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            float fill = this.health/this.maxHealth;
+            healthBar.fillAmount = fill;
         }
     }
 }

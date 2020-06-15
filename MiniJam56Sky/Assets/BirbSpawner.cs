@@ -32,7 +32,7 @@ public class BirbSpawner : MonoBehaviour
                         newPosition = new Vector3(leftBottom.position.x,Random.Range(rightBottom.position.y,rightTop.position.y), 1f );
 
         }
-        var newBirb = Instantiate(birbHolder,transform.position,Quaternion.identity, birbHolder.transform) as GameObject;
+        var newBirb = Instantiate(birbHolder,transform.position,Quaternion.identity, null) as GameObject;
         newBirb.GetComponent<BirbController>().right = right;
         newBirb.transform.position = newPosition;
     }

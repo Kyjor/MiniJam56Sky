@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 1f);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,14 +19,13 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(this.damage);
             canDamage = false;
-            Destroy(gameObject);
         }
 
         if (collision.CompareTag("Base") && canDamage)
         {
             collision.gameObject.GetComponent<Base>().TakeDamage(this.damage);
             canDamage = false;
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

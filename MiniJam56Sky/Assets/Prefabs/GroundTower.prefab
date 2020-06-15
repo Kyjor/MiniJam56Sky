@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGroundTower: 1
-  fireRate: 0.5
+  fireRate: 2
   firePower: 200
   moveSpeed: 0.1
   donutPrefab: {fileID: 2067339563354260287, guid: 667b3cad50e983d0ea9518a81cdb62f0,
@@ -562,6 +562,7 @@ MonoBehaviour:
   health: 50
   healthBar: {fileID: 443925901}
   healthDisplay: {fileID: 0}
+  isFactory: 0
 --- !u!1 &7469053538301263545
 GameObject:
   m_ObjectHideFlags: 0

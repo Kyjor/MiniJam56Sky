@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4711904630b0ee644bc199703c83f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!114 &902387821816784310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 0
-  fireRate: 5
+  fireRate: 1
   fireTimer: 0
   attackPower: 100
   attackDistance: 1
