@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
         EnemyMovement newEnemy = GameObject.Instantiate(enemy, this.transform.position, this.transform.rotation).GetComponent<EnemyMovement>();
         if (newEnemy.GetComponent<Enemy>().type != EnemyType.Helicopter)
         {
-            newEnemy.SetTarget(this.target.transform);
+           // newEnemy.SetTarget(this.target.transform);
         }
     }
 }

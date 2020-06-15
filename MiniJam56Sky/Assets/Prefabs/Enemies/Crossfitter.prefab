@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127742196}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.419018, y: 0.9402783, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1650660521320262513}
@@ -417,11 +417,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1650660521320262513}
   - component: {fileID: 3962591297486871452}
-  - component: {fileID: 5726204085469719923}
   - component: {fileID: 6377638725676534861}
   - component: {fileID: 275761173087363033}
   - component: {fileID: 745499507582908317}
   - component: {fileID: 3542696865169654674}
+  - component: {fileID: -2238774910774154274}
   m_Layer: 10
   m_Name: Crossfitter
   m_TagString: Enemy
@@ -473,19 +473,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5726204085469719923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681617644555370265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4711904630b0ee644bc199703c83f8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!114 &6377638725676534861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,12 +543,26 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &-2238774910774154274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681617644555370265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc0e78f424cc56d0b47e74f4ae8e0fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFireTime: 0.5
+  speed: 400
 --- !u!1 &7202919221491011434
 GameObject:
   m_ObjectHideFlags: 0
