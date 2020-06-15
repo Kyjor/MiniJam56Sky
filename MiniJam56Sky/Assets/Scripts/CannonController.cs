@@ -32,6 +32,9 @@ public class CannonController : MonoBehaviour
 
     void Update()
     {
+        // can only fire in round
+        if (!RoundManager.Instance.InRound()) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             fire = true;

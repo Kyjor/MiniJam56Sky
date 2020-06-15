@@ -21,13 +21,12 @@ public class AutoCannonController : MonoBehaviour
     public Transform parentTransform;
     SpriteRenderer mySpriteRenderer;
     public SpriteRenderer factorySprite;
+
     void Start()
     {
         isBeingPlaced = true;
         mySpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-
-
 
     void Update()
     {
@@ -42,25 +41,25 @@ public class AutoCannonController : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             parentTransform.position = Vector2.Lerp(parentTransform.position, mousePosition, moveSpeed);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            //place object (y position Set)
-            if(isGroundTower)
+            if (Input.GetMouseButtonDown(0))
             {
-                //place on selected x pos on the ground, activate
-                parentTransform.position = new Vector3(parentTransform.position.x, groundTowerYPosition,1f);
+                //place object (y position Set)
+                if(isGroundTower)
+                {
+                    //place on selected x pos on the ground, activate
+                    parentTransform.position = new Vector3(parentTransform.position.x, groundTowerYPosition,0f);
+                }
+                else if (!isGroundTower)
+                {
+                    //place on selected x in the air
+                    parentTransform.position = new Vector3(parentTransform.position.x, airTowerYPosition,0f);
+                }
+                //release control
+                isBeingPlaced = false;
+                //Reset Alpha
+                mySpriteRenderer.color = new Color(mySpriteRenderer.color.r,mySpriteRenderer.color.g, mySpriteRenderer.color.b, 1f);
+                factorySprite.color = new Color(factorySprite.color.r,factorySprite.color.g, factorySprite.color.b, 1f);
             }
-            else if (!isGroundTower)
-            {
-                //place on selected x in the air
-                parentTransform.position = new Vector3(parentTransform.position.x, airTowerYPosition,1f);
-            }
-            //release control
-            isBeingPlaced = false;
-            //Reset Alpha
-            mySpriteRenderer.color = new Color(mySpriteRenderer.color.r,mySpriteRenderer.color.g, mySpriteRenderer.color.b, 1f);
-            factorySprite.color = new Color(factorySprite.color.r,factorySprite.color.g, factorySprite.color.b, 1f);
-        }
         }
 
         if (!readyToFire)
@@ -71,22 +70,22 @@ public class AutoCannonController : MonoBehaviour
                 readyToFire = true;
             }
         }
-       else if ( readyToFire && !fire)
-       {
+        else if ( readyToFire && !fire)
+        {
            fire = true;
-       }
-       AimCannon();
+        }
+        AimCannon();
     }
 
     void AimCannon()
     {
         if(target !=null)
-            {
-                Vector3 dir = target.position -  transform.position;
-                //print(dir);
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            }
+        {
+            Vector3 dir = target.position -  transform.position;
+            //print(dir);
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
 
     private void FixedUpdate()
@@ -103,8 +102,6 @@ public class AutoCannonController : MonoBehaviour
         {
             if(target !=null)
             {
-            
-            
               //Instantiate donut
                 var donut = Instantiate(donutPrefab, transform.position, Quaternion.identity, null) as GameObject;
                 //Fire Donut
