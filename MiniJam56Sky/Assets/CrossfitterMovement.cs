@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CrossfitterMovement : MonoBehaviour
-{
+{   
+    public GameObject walkingAnim;
+    public GameObject attackingAnim;
     bool movingRight = false; 
     private float fireTimer = 0f;
     [SerializeField] private float maxFireTime = 0.5f;
@@ -19,6 +21,7 @@ public class CrossfitterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackingAnim.SetActive(false);
         enemyAttack = GetComponent<EnemyAttack>();
 
         currentState = State.forward;
@@ -54,10 +57,8 @@ public class CrossfitterMovement : MonoBehaviour
         {
            
             print(enemyAttack.target.name);
-            print(Vector3.Distance(transform.position, enemyAttack.target.position));
             if (enemyAttack.target!=null && Vector3.Distance(transform.position, enemyAttack.target.position) <= 4.5f)
             {
-                print("crossfitterfiring");
                 fireTimer = 0;
                 ChangeToFireState(State.firing);
             }
@@ -73,6 +74,8 @@ public class CrossfitterMovement : MonoBehaviour
             }
             else if(fireTimer >= maxFireTime)
             {
+                walkingAnim.SetActive(true);
+                attackingAnim.SetActive(false);
                 enemyAttack.attack = false;
                 currentState = State.forward;
                
@@ -85,6 +88,8 @@ public class CrossfitterMovement : MonoBehaviour
 
    void ChangeToFireState(State nextState)
     {
+        attackingAnim.SetActive(true);
+        walkingAnim.SetActive(false);
         rb2D.velocity = Vector2.zero;
         currentState = nextState;
     }
@@ -99,7 +104,6 @@ public class CrossfitterMovement : MonoBehaviour
     {
         if(collision.CompareTag("Base"))
         {
-            print("CollidedWith Base");
             enemyAttack.target = collision.gameObject.transform;
          
         }
