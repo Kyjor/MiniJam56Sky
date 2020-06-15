@@ -19,7 +19,7 @@ public class ColorCustomizer : MonoBehaviour
         for (int i = 0; i < spriteArms.Length; i++)
         {
              // Color part
-            
+            print(newColor);
             spriteArms[i].GetComponent<SpriteRenderer>().color = newColor;
         }
         newColor = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f), Random.Range(0f, 1f));

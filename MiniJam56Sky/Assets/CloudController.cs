@@ -19,7 +19,7 @@ public class CloudController : MonoBehaviour
         moveSpeed = Random.Range(cloudMinSpeed,cloudMaxSpeed);
         transform.localScale *= Random.Range(cloudMinSize,cloudMaxSize);
         InvokeRepeating("MoveCloud",0f, Time.deltaTime);
-        Invoke("DestroyThis",20f);
+        Invoke("DestroyThis",30f);
     }
 
     // Update is called once per frame
