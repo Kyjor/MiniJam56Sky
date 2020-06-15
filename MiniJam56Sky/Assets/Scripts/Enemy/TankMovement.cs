@@ -9,7 +9,7 @@ public class TankMovement : MonoBehaviour
     [SerializeField] private float maxFireTime = 0.5f;
     [SerializeField] private float initialFiringDistance;
     [SerializeField] private float maxForwardDuringFireState = 1f;
-    [SerializeField] private float maxBackwardDistanceTravel = 5f;
+    [SerializeField] private float maxBackwardDistanceTravel = .5f;
     public float speed;
 
     private bool active;

@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffa26c7580e5b8428910249e230d39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 75
 --- !u!114 &1616310263514219656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ed689043c34f2f59d4dc163736c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteParts:
-  - {fileID: 3117055655024106289}
+  spriteArms: []
+  spriteShirts: []
+  spriteHairs: []
 --- !u!1 &3117055655024106289
 GameObject:
   m_ObjectHideFlags: 0

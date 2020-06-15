@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Base : MonoBehaviour
 {
+    public float maxHealth;
     public float health;
-    private float maxHealth;
+    public Image healthBar;
 
     public TextMeshProUGUI healthDisplay;
+
+    public bool isFactory;
+    public GameObject restartButton;
 
     private void Start()
     {
@@ -16,17 +21,41 @@ public class Base : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   if(healthDisplay != null)
         this.healthDisplay.text = this.health.ToString() + "/" + this.maxHealth.ToString();
     }
 
     public void TakeDamage(float damage)
     {
+        
         Debug.Log("took damge" + damage);
         this.health -= damage;
+        float fill = this.health/this.maxHealth;
+        healthBar.fillAmount = fill;
         if (health <= 0)
         {
+            if (isFactory)
+            {
+                restartButton.SetActive(true);
+            }
             // game over
+            
+            else if(!isFactory)
+                Destroy(gameObject);
+            
+        }
+    }
+    public void BuyHealth()
+    {
+        if (PointManager.Instance.SpendPoints(100) && health <= maxHealth)
+        {
+            this.health += 100;
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            float fill = this.health/this.maxHealth;
+            healthBar.fillAmount = fill;
         }
     }
 }

@@ -34,9 +34,14 @@ public class EnemyMovement : MonoBehaviour
                 // stop moving
                 this.active = false;
 
-                if (GetComponent<Enemy>().type == EnemyType.Helicopter)
+                switch (GetComponent<Enemy>().type)
                 {
-                    StartCoroutine("FireAndMove");
+                    case EnemyType.Helicopter:
+                        StartCoroutine("FireAndMove");
+                        break;
+                    case EnemyType.Person:
+                        GetComponent<EnemyAttack>().attack = true;
+                        break;
                 }
             }
         }
@@ -67,5 +72,13 @@ public class EnemyMovement : MonoBehaviour
     public void SetSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Base"))
+        {
+            SetTarget(other.transform);
+        }   
     }
 }
