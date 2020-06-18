@@ -34,7 +34,6 @@ public class Base : MonoBehaviour
         healthBar.fillAmount = fill;
         if (health <= 0)
         {
-<<<<<<< HEAD
             if (isFactory)
             {
                 restartButton.SetActive(true);
@@ -43,16 +42,9 @@ public class Base : MonoBehaviour
             
             else if(!isFactory)
                 Destroy(gameObject);
-            
-=======
-            restartButton.SetActive(true);
-            // game over
-            if (!isFactory)
-            {
-                Destroy(gameObject);
-            }
->>>>>>> master
         }
+            
+
     }
     public void BuyHealth()
     {
